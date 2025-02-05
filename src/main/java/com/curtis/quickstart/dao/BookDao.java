@@ -1,11 +1,18 @@
 package com.curtis.quickstart.dao;
 
-import com.curtis.quickstart.domain.Book;
-
+import java.util.List;
 import java.util.Optional;
+
+import com.curtis.quickstart.domain.Book;
 
 public interface BookDao {
     void create(Book book);
 
-    Optional<Book> find(String isbn);
+    Optional<Book> findOne(String isbn);
+    
+    List<Book> find();
+    
+    void update(String isbn, Book book);
+    
+    void delete(String isbn);
 }
