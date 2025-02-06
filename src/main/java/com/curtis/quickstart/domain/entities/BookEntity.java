@@ -1,4 +1,4 @@
-package com.curtis.quickstart.domain;
+package com.curtis.quickstart.domain.entities;
 
 
 import jakarta.persistence.CascadeType;
@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @Table(name = "books")
-public class Book {
+public class BookEntity {
 
 	@Id
     private String isbn;
@@ -27,5 +27,5 @@ public class Book {
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id")
-    private Author author;
+    private AuthorEntity author;
 }

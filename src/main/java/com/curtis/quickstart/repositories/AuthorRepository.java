@@ -4,14 +4,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.curtis.quickstart.domain.Author;
+import com.curtis.quickstart.domain.entities.AuthorEntity;
 
 @Repository
-public interface AuthorRepository extends CrudRepository<Author, Long> {
+public interface AuthorRepository extends CrudRepository<AuthorEntity, Long> {
 
-	Iterable<Author> ageLessThan(int age);
+	Iterable<AuthorEntity> ageLessThan(int age);
 	
-	@Query("Select a From Author a where a.age > ?1")
-	Iterable<Author> findAuthorsWithAgeGreaterThan(int age);
+	@Query("Select a From AuthorEntity a where a.age > ?1")
+	Iterable<AuthorEntity> findAuthorsWithAgeGreaterThan(int age);
 	
 }
