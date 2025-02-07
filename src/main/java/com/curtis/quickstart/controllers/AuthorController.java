@@ -64,7 +64,7 @@ public class AuthorController {
 	@PutMapping(path = "/authors/{id}")
 	public ResponseEntity<AuthorDto> fullUpdateAuthor(@PathVariable("id") Long id, @RequestBody AuthorDto authorDto) {
 		
-		if (authorService.isExists(id) ) {
+		if (!authorService.isExists(id) ) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			
 		}
@@ -84,7 +84,7 @@ public class AuthorController {
 	public ResponseEntity<AuthorDto> partialUpdate (@PathVariable("id") Long id, @RequestBody AuthorDto authorDto) {
 		
 		
-		if (authorService.isExists(id) ) {
+		if (!authorService.isExists(id) ) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			
 		}

@@ -180,6 +180,7 @@ public class AuthorControllerIntegrationTest {
                         .content(authorDtoJson)
         ).andExpect(MockMvcResultMatchers.status().isOk());
     }
+    
 
     @Test
     public void testThatFullUpdateUpdatesExistingAuthor() throws Exception {
