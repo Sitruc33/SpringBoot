@@ -1,5 +1,7 @@
 package com.curtis.quickstart;
 
+import com.curtis.quickstart.domain.dto.AuthorDto;
+import com.curtis.quickstart.domain.dto.BookDto;
 import com.curtis.quickstart.domain.entities.AuthorEntity;
 import com.curtis.quickstart.domain.entities.BookEntity;
 
@@ -33,7 +35,7 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static BookEntity createTestBookA(final AuthorEntity author) {
+    public static BookEntity createTestBookEntityA(final AuthorEntity author) {
         return BookEntity.builder()
                 .isbn("978-1-2345-6789-0")
                 .title("The Shadow in the Attic")
@@ -54,6 +56,14 @@ public final class TestDataUtil {
                 .isbn("978-1-2345-6789-2")
                 .title("The Last Ember")
                 .author(author)
+                .build();
+    }
+    
+    public static BookDto createTestBookDtoA(final AuthorDto authorDto) {
+        return BookDto.builder()
+                .isbn("978-1-2345-6789-0")
+                .title("The Shadow in the Attic")
+                .author(authorDto)
                 .build();
     }
 }
