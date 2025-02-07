@@ -11,7 +11,7 @@ public final class TestDataUtil {
     }
 
 
-    public static AuthorEntity createTestAuthorA() {
+    public static AuthorEntity createTestAuthorEntityA() {
         return AuthorEntity.builder()
                 .id(1L)
                 .name("Abigail Rose")
@@ -39,7 +39,7 @@ public final class TestDataUtil {
         return BookEntity.builder()
                 .isbn("978-1-2345-6789-0")
                 .title("The Shadow in the Attic")
-                .author(author)
+                .authorEntity(author)
                 .build();
     }
     
@@ -47,7 +47,7 @@ public final class TestDataUtil {
         return BookEntity.builder()
                 .isbn("978-1-2345-6789-1")
                 .title("Beyond the Horizon")
-                .author(author)
+                .authorEntity(author)
                 .build();
     }
 
@@ -55,7 +55,7 @@ public final class TestDataUtil {
         return BookEntity.builder()
                 .isbn("978-1-2345-6789-2")
                 .title("The Last Ember")
-                .author(author)
+                .authorEntity(author)
                 .build();
     }
     
@@ -64,6 +64,14 @@ public final class TestDataUtil {
                 .isbn("978-1-2345-6789-0")
                 .title("The Shadow in the Attic")
                 .author(authorDto)
+                .build();
+    }
+    
+    public static AuthorDto createTestAuthorDtoA() {
+        return AuthorDto.builder()
+                .id(1L)
+                .name("Abigail Rose")
+                .age(80)
                 .build();
     }
 }
