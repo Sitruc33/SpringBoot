@@ -1,5 +1,5 @@
 **SpringBoot app to showcase Java skills**
-
+```
 Endpoints: 
 POST /authors - create a new author
 GET /authors - get a page of authors (?size=<number of authors returned, ?page=<page number you want returned>)
@@ -13,3 +13,4 @@ GET /books/{isbn} - get a specific book using their isbn
 PUT /books/{isbn} - full update for an book
 PATCH /books/{isbn} - partial update for an book
 DELETE /books/{isbn} - delete an book with id
+```
