@@ -1,9 +1,10 @@
 package com.curtis.quickstart.controllers;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -42,10 +43,10 @@ public class AuthorController {
 	}
 	
 	@GetMapping(path = "/authors")
-	public List<AuthorDto> listAuthors() {
+	public Page<AuthorDto> listAuthors(Pageable pageable) {
 		
-		List<AuthorEntity> authors = authorService.findAll();
-		return authors.stream().map(authorMapper::mapTo).collect(Collectors.toList());
+		Page<AuthorEntity> authors = authorService.findAll(pageable);
+		return authors.map(authorMapper::mapTo);
 		
 	}
 	

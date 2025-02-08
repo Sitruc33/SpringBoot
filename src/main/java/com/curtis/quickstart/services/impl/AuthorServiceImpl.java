@@ -5,6 +5,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.curtis.quickstart.domain.entities.AuthorEntity;
@@ -82,5 +84,14 @@ public class AuthorServiceImpl implements AuthorService {
 	public void delete(Long id) {
 		authorRepository.deleteById(id);
 		
+	}
+
+
+
+
+	@Override
+	public Page<AuthorEntity> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return authorRepository.findAll(pageable);
 	}
 }

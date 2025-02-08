@@ -3,6 +3,9 @@ package com.curtis.quickstart.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.curtis.quickstart.domain.entities.AuthorEntity;
 
 public interface AuthorService {
@@ -11,7 +14,7 @@ public interface AuthorService {
 
 	List<AuthorEntity> findAll();
 	
-	
+	Page<AuthorEntity> findAll(Pageable pageable);
 
 	Optional<AuthorEntity> findOne(Long id);
 
