@@ -1,5 +1,6 @@
-SpringBoot app to showcase Java skills 
-Endpoints: 
+**SpringBoot app to showcase Java skills**
+
+**Endpoints: **
 POST /authors - create a new author
 GET /authors - get a page of authors (?size=<number of authors returned, ?page=<page number you want returned>)
 GET /authors/{id} - get a specific author using their id
