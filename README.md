@@ -1,4 +1,4 @@
-# SpringBoot app to showcase Java skills
+# SpringBoot api to showcase Java skills
 
 ## Endpoints: 
 - POST /authors - create a new author
